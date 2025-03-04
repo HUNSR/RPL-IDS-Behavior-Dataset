@@ -52,12 +52,23 @@ cd ~/contiki-ng/tools/cooja
 ---
 
 ## 🚀 Running the Simulation to test evry thing is correct 
-1. Inside Cooja, open the provided `.csc` simulation files from `contiki-ng\IDS-example\Visualization\dataset`.
-2. Click **Start** to run the network simulation.
-3. The modified nodes will generate log files containing network behavior.
-4. if every thing ok .. close cooja and run the script 
 
----
+1- Inside Cooja, open the provided .csc simulation files from:
+2- contiki-ng\IDS-example\Visualization\dataset
+3- Click Start to run the network simulation.
+4- The modified nodes will generate log files containing network behavior.
+5- If everything is correct, close Cooja and proceed to the next step.
+6- Run the script sequential_executor.py in the directory:
+```
+cd contiki-ng\IDS-example\Visualization\dataset
+```
+7- To execute the script, use the following command in the terminal:
+```
+    python3 sequential_executor.py
+```
+sequential_executor.py will automatically run all .csc Cooja simulation files in the current directory using no-GUI mode.
+This process will generate the required log files for further analysis.
+
 
 ## 📊 Dataset Generation & IDS Testing
 
