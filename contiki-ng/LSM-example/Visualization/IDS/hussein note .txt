@@ -1,0 +1,2 @@
+this folder (IDS ) is a copy form 15_nodes_LSM folder to test the creation of dataset to IDS
+created in October 9-10-2024 

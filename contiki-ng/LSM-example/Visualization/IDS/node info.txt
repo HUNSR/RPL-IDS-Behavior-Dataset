@@ -1,0 +1,37 @@
+NEIGHBOR_NODES_PARAM_NUM
+
+currentnodeinfo[0] : node id
+currentnodeinfo[1] : parent node id
+currentnodeinfo[2] : RPL version
+currentnodeinfo[3] : RPL rank 
+
+currentnodeinfo[4] : count of DIS packets sent
+currentnodeinfo[5] : count of DIO packets sent
+currentnodeinfo[6] : count of DAO packets sent
+ 
+
+currentnodeinfo[9] : label ( 0 : normal , 1 VNA , 2 DRA , 3 DISA)
+ 
+
+
+
+nodesinfo[i][0] :
+nodesinfo[i][1] : count of DIS packets received from node i
+nodesinfo[i][2] : count of DIO packets received from node i
+nodesinfo[i][3] : count of DAO-ACK packets received from node i
+
+nodesinfo[i][4] : count of packets received from node i forwarded to me 
+nodesinfo[i][5] : count of packets received from node i forwarded to others 
+nodesinfo[i][6] : count of packets received from node i forwarded broadcast
+nodesinfo[i][7] : count of RPL packets received from node i to be forwarding (not to me)
+nodesinfo[i][8] : count of NON-RPL packets received from node i to be forwarding (not to me)
+
+nodesinfo[i][9] : RPL version received from node i DIO
+nodesinfo[i][10] : RPL Rank received from node i DIO
+
+
+nodesinfo[i][11] : count of RPL packets sent to  node i to be forwarding (not to i)
+nodesinfo[i][12] : count of NON-RPL packets sent to node i to be forwarding (not to i)
+
+
+
