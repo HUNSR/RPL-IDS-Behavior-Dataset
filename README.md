@@ -58,7 +58,7 @@ cd ~/contiki-ng/tools/cooja
 3. Click Start to run the network simulation.
 4. The modified nodes will generate log files containing network behavior.
 5. If everything is correct, close Cooja and proceed to the next step.
-6. Run the script sequential_executor.py in the directory:
+6. Navigate to the directory where sequential_executor.py is located:
 ```
 cd contiki-ng\IDS-example\Visualization\dataset
 ```
