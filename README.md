@@ -12,14 +12,17 @@ It includes:
 ```
 RPL-IDS-Behavior-Dataset/
 │── contiki-ng/              # Modified Contiki-NG files (must replace existing Contiki-NG installation)
+│   ├── IDS-example/         # Example IDS-related code and network topology simulator files
+│   ├── os/                  # Core OS files and RPL protocol modifications (replace existing Contiki-NG files)
 │── python-analysis/         # Python scripts for dataset processing & IDS evaluation
-│   ├── dataset/             # Processed dataset (CSV files)
-│   ├── dataset-processing/  # Python scripts to generate dataset from logs
-│   ├── ids-evaluation/      # IDS testing and ML classification scripts
+│   ├── dataset/             # Log files generated from simulation (raw data)
 │   ├── feature-selection/   # Feature importance analysis scripts
-│── README.md                # Project documentation
-│── LICENSE                  # License file (optional)
-│── .gitignore               # Ignore unnecessary files
+│── dataset_generation.py    # Script to read log files from dataset/ and generate the final dataset
+│── README.md                # Project documentation and usage instructions
+│── IDS.py                   # IDS and ML classification scripts for testing dataset
+│── RPL-IDS-Beh.csv          # Complete processed dataset for IDS evaluation
+│── .gitignore               # List of files/folders to be ignored by Git
+
 ```
 
 ---
@@ -43,15 +46,16 @@ To apply the necessary modifications for attack simulation:
 After replacing the files, launch Cooja:
 ```
 cd ~/contiki-ng/tools/cooja
-ant run
+./gradlew run
 ```
 
 ---
 
-## 🚀 Running the Simulation
-1. Inside Cooja, open the provided `.csc` simulation files from `contiki-ng/cooja-simulations/`.
+## 🚀 Running the Simulation to test evry thing is correct 
+1. Inside Cooja, open the provided `.csc` simulation files from `contiki-ng\IDS-example\Visualization\dataset`.
 2. Click **Start** to run the network simulation.
 3. The modified nodes will generate log files containing network behavior.
+4. if every thing ok .. close cooja and run the script 
 
 ---
 
@@ -62,15 +66,15 @@ Once simulation logs are collected, use Python scripts for dataset processing an
 ### **1️⃣ Process Simulation Logs**
 Convert logs into a structured dataset:
 ```
-cd python-analysis/dataset-processing
-python dataset_generation.py
+cd contiki-ng/LSM-example/Visualization/dataset$ 
+python3 sequential_executor.py
 ```
 
 ### **2️⃣ Run IDS Evaluation**
 Test the **Intrusion Detection System (IDS)** using machine learning models:
 ```
 cd ../ids-evaluation
-python ids_evaluation.py
+python ids.py
 ```
 
 ### **3️⃣ Analyze Feature Importance**
