@@ -17,7 +17,7 @@ RPL-IDS-Behavior-Dataset/
 │── python-analysis/         # Python scripts for dataset processing & IDS evaluation
 │   ├── dataset/             # Log files generated from simulation (raw data)
 │   ├── feature-selection/   # Feature importance analysis scripts
-│── dataset_generation.py    # Script to read log files from dataset/ and generate the final dataset
+│── dataset_generation.py    # Script to read log files from dataset/ folder and generate the final dataset
 │── README.md                # Project documentation and usage instructions
 │── IDS.py                   # IDS and ML classification scripts for testing dataset
 │── RPL-IDS-Beh.csv          # Complete processed dataset for IDS evaluation
@@ -51,18 +51,19 @@ cd ~/contiki-ng/tools/cooja
 
 ---
 
-## 🚀 Running the Simulation to test evry thing is correct 
+## 🚀 Running the Simulation to Verify Correctness
 
-1. Inside Cooja, open the provided .csc simulation files from:
-2. contiki-ng\IDS-example\Visualization\dataset
-3. Click Start to run the network simulation.
-4. The modified nodes will generate log files containing network behavior.
-5. If everything is correct, close Cooja and proceed to the next step.
-6. Navigate to the directory where sequential_executor.py is located:
+- Open Cooja and navigate to `contiki-ng\IDS-example\Visualization\dataset`
+- Open the provided `.csc` simulation files
+- Click **Start** to begin the network simulation
+- The modified nodes should generate log files containing network behavior
+- Verify that the log files are being generated correctly and contain entries with "ids:"
+- If everything is correct, close Cooja
+- Open a terminal and navigate to dataset directory
 ```
 cd contiki-ng\IDS-example\Visualization\dataset
 ```
-7. To execute the script, use the following command in the terminal:
+- Run `sequential_executor.py` to execute multiple network simulations in no-GUI mode.
 ```
     python3 sequential_executor.py
 ```
@@ -70,30 +71,75 @@ sequential_executor.py will automatically run all .csc Cooja simulation files in
 This process will generate the required log files for further analysis.
 
 
-## 📊 Dataset Generation & IDS Testing
+### 🔹 Network Simulation Files
+Before running `sequential_executor.py`, ensure that there are **six `.csc` network simulation files** in the `dataset` directory.  
+These files represent different network scenarios with **varying numbers of nodes and root positions**.
 
-Once simulation logs are collected, use Python scripts for dataset processing and IDS evaluation.
+Researchers can also **test other network configurations** by placing their own `.csc` files in the same `dataset` directory.  
+Any additional `.csc` files placed in this directory will be automatically executed during the simulation process.
 
-### **1️⃣ Process Simulation Logs**
-Convert logs into a structured dataset:
+
+### 🔹 Attack Configuration
+This execution will use the attack parameters defined in project-conf.h file in the path:
+/contiki-ng/LSM-example/Visualization/IDS/project-conf.h
+
+To activate or deactivate specific attack types, edit the following parameters in `project-conf.h`:
+```c
+#define CONF_SFA 0 //  Selective Forward Attack
+#define CONF_VNA 1 //  Version Number Attack
+#define CONF_DRA 1 //  Decrease Rank Attack
+#define CONF_IRA 0 //  Increase Rank Attack
 ```
-cd contiki-ng/LSM-example/Visualization/dataset$ 
-python3 sequential_executor.py
+However, all attack combinations are already pre-configured and executed.
+The generated log files **can be found** in the sub-folders of the dataset folder.
+
+
+# 📊 Dataset Generation & IDS Testing
+
+Once simulation logs are collected, use Python scripts for dataset processing and IDS evaluation.  
+These steps **do not require** COOJA Simulator or an Ubuntu environment and can be executed on **Windows** using Python.
+To do this, download the `python-analysis` folder from the repository to your Windows OS.
+
+## **1️⃣ Process Simulation Logs**
+Ensure that the log files for any attack scenario are placed inside the `dataset` folder under:
+
+\python-analysis\dataset
+
+Then, run the dataset generation script to create the dataset file `RPL-IDS-Beh.csv`:
+```
+cd \python-analysis 
+python3 dataset_generation.py
 ```
 
-### **2️⃣ Run IDS Evaluation**
+
+## **2️⃣ Run IDS Evaluation**
 Test the **Intrusion Detection System (IDS)** using machine learning models:
 ```
-cd ../ids-evaluation
-python ids.py
+python IDS.py
 ```
+Running `IDS.py` will output multiple evaluation metrics, including:
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1-score**
+- **Confusion Matrix** (showing the classification results for different attack types)
 
-### **3️⃣ Analyze Feature Importance**
+
+## **3️⃣ Analyze Feature Importance**
 To understand which features contribute most to attack detection:
 ```
-cd ../feature-selection
-python feature_importance.py
+cd \feature_importance 
+python3 feature_importance.py
 ```
+
+The `feature_importance.py` script will generate an image with a bar graph representing the **top 10 most important features**.
+
+### ✅ Notes:
+- Ensure **Python** is installed on your Windows OS.
+- Place the correct log files in the `dataset` folder before running `dataset_generation.py`.
+- The generated dataset file `RPL-IDS-Beh.csv` will be used for IDS evaluation and feature analysis.
+
+
 
 ---
 
@@ -103,7 +149,6 @@ The dataset contains:
 - **Neighbor-aggregated features** (e.g., average forwarded packets).
 - **Derived features** (e.g., rank difference, control-to-data packet ratio).
 
-For full details, refer to the dataset documentation in `python-analysis/dataset/README.md`.
 
 ---
 
