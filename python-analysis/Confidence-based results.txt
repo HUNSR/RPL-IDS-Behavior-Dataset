@@ -1,0 +1,26 @@
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\python.exe "D:\phd\الكتابة\Results\python-analysis RPL-IDS-Beh\Confidence-based IDS.py"
+=== Max Confidence Voting with Threshold on Class 0 ===
+Accuracy:  0.9623
+
+Confusion Matrix:
+[[38879   878   188   183   213]
+ [   55  2231     0     1     2]
+ [   90    15  1035     0     1]
+ [   21     6     0  2083     0]
+ [   95    41     3     0  1457]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.96      0.98     40341
+           1       0.70      0.97      0.82      2289
+           2       0.84      0.91      0.87      1141
+           3       0.92      0.99      0.95      2110
+           4       0.87      0.91      0.89      1596
+
+    accuracy                           0.96     47477
+   macro avg       0.87      0.95      0.90     47477
+weighted avg       0.97      0.96      0.96     47477
+
+
+Process finished with exit code 0

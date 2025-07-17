@@ -1,0 +1,147 @@
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\python.exe "D:\phd\الكتابة\Results\python-analysis RPL-IDS-Beh\Traditional Machine Learning IDS.py" 
+--- Random Forest ---
+Accuracy: 0.969
+Precision: 0.969
+Recall: 0.969
+F1 Score: 0.968
+Confusion Matrix:
+ [[40039   150    49    15    27]
+ [  401  1873     0     0     0]
+ [  187     2   961     0     0]
+ [  199     1     0  2012     0]
+ [  420     5     1     0  1135]]
+Classification Report:
+               precision    recall  f1-score   support
+
+      Normal       0.97      0.99      0.98     40280
+         VNA       0.92      0.82      0.87      2274
+         DRA       0.95      0.84      0.89      1150
+        DISA       0.99      0.91      0.95      2212
+         SFA       0.98      0.73      0.83      1561
+
+    accuracy                           0.97     47477
+   macro avg       0.96      0.86      0.90     47477
+weighted avg       0.97      0.97      0.97     47477
+
+
+
+--- Decision Tree ---
+Accuracy: 0.949
+Precision: 0.949
+Recall: 0.949
+F1 Score: 0.949
+Confusion Matrix:
+ [[39090   466   203   188   333]
+ [  444  1794     5     7    24]
+ [  165     7   974     1     3]
+ [  214    18     0  1971     9]
+ [  312    17     2     3  1227]]
+Classification Report:
+               precision    recall  f1-score   support
+
+      Normal       0.97      0.97      0.97     40280
+         VNA       0.78      0.79      0.78      2274
+         DRA       0.82      0.85      0.83      1150
+        DISA       0.91      0.89      0.90      2212
+         SFA       0.77      0.79      0.78      1561
+
+    accuracy                           0.95     47477
+   macro avg       0.85      0.86      0.85     47477
+weighted avg       0.95      0.95      0.95     47477
+
+
+
+--- K-Nearest Neighbors ---
+Accuracy: 0.918
+Precision: 0.912
+Recall: 0.918
+F1 Score: 0.910
+Confusion Matrix:
+ [[39521   292   120   143   204]
+ [ 1241  1006     6     4    17]
+ [  349     5   795     1     0]
+ [  696     4     0  1508     4]
+ [  799    21     1     1   739]]
+Classification Report:
+               precision    recall  f1-score   support
+
+      Normal       0.93      0.98      0.95     40280
+         VNA       0.76      0.44      0.56      2274
+         DRA       0.86      0.69      0.77      1150
+        DISA       0.91      0.68      0.78      2212
+         SFA       0.77      0.47      0.59      1561
+
+    accuracy                           0.92     47477
+   macro avg       0.84      0.65      0.73     47477
+weighted avg       0.91      0.92      0.91     47477
+
+
+
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+--- SVM ---
+Accuracy: 0.852
+Precision: 0.765
+Recall: 0.852
+F1 Score: 0.787
+Confusion Matrix:
+ [[40264     0     0    16     0]
+ [ 2274     0     0     0     0]
+ [ 1150     0     0     0     0]
+ [ 2044     0     0   168     0]
+ [ 1561     0     0     0     0]]
+Classification Report:
+               precision    recall  f1-score   support
+
+      Normal       0.85      1.00      0.92     40280
+         VNA       0.00      0.00      0.00      2274
+         DRA       0.00      0.00      0.00      1150
+        DISA       0.91      0.08      0.14      2212
+         SFA       0.00      0.00      0.00      1561
+
+    accuracy                           0.85     47477
+   macro avg       0.35      0.22      0.21     47477
+weighted avg       0.76      0.85      0.79     47477
+
+
+
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1517: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+--- Naive Bayes ---
+Accuracy: 0.508
+Precision: 0.776
+Recall: 0.508
+F1 Score: 0.587
+Confusion Matrix:
+ [[21244  8789  8591  1500   156]
+ [  504  1727    35     7     1]
+ [  337    85   703    20     5]
+ [ 1110   245   427   430     0]
+ [  705   324   468    47    17]]
+Classification Report:
+               precision    recall  f1-score   support
+
+      Normal       0.89      0.53      0.66     40280
+         VNA       0.15      0.76      0.26      2274
+         DRA       0.07      0.61      0.12      1150
+        DISA       0.21      0.19      0.20      2212
+         SFA       0.09      0.01      0.02      1561
+
+    accuracy                           0.51     47477
+   macro avg       0.28      0.42      0.25     47477
+weighted avg       0.78      0.51      0.59     47477
+
+
+
+
+Process finished with exit code 0

@@ -1,0 +1,29 @@
+C:\Users\MSI\AppData\Local\Programs\Python\Python312\python.exe "D:\phd\الكتابة\Results\python-analysis RPL-IDS-Beh\Hybrid Stacking IDS.py"
+=== Hybrid Stacking Model (Proposed Configuration) ===
+Accuracy:  0.9532
+Precision: 0.9621
+Recall:    0.9532
+F1 Score:  0.9556
+
+Confusion Matrix:
+[[38236   770   414   189   585]
+ [   88  2218     1     0    10]
+ [   45     8  1134     0     2]
+ [   28     0     0  2135     1]
+ [   70    13     0     0  1530]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.95      0.97     40194
+           1       0.74      0.96      0.83      2317
+           2       0.73      0.95      0.83      1189
+           3       0.92      0.99      0.95      2164
+           4       0.72      0.95      0.82      1613
+
+    accuracy                           0.95     47477
+   macro avg       0.82      0.96      0.88     47477
+weighted avg       0.96      0.95      0.96     47477
+
+
+Process finished with exit code 0
